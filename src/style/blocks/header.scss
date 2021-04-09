@@ -1,0 +1,231 @@
+.header {
+  background: $white;
+  &__wrapper {
+    max-width: 1300px;
+    margin: auto;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__row {
+    display: inherit;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .search {
+    display: flex;
+    width: 100%;
+    padding: 0 30px 0 75px;
+    &__btn, &__input {
+      border: 1px solid rgba(52, 125, 184, 0.15);
+      background-color: $light-grey;
+      padding: 12px 24px 10px 24px;
+    }
+    &__btn {
+      border-radius: 8px 0 0 8px;
+      border-right: none;
+    }
+    &__input {
+      width: 100%;
+      outline: none;
+      border-radius:0 8px 8px 0;
+    }
+    &__input-btn {
+      display: none;
+    }
+  }
+  &__button {
+    min-width: 185px;
+    padding: 12px 7px;
+    border-radius: 4px;
+    background-color: $bright-blue;
+    color: $white;
+  }
+  &__burger {
+    display: none;
+  }
+  &__menu {
+    border-top: 1px solid $light-grey;
+  }
+  .header-menu {
+    display: flex;
+    max-width: 1300px;
+    margin: auto;
+    &__item {
+      position: relative;
+      padding: 10px 40px;
+      border-right: 1px solid $light-grey;
+    }
+    &__link:hover {
+      text-shadow: 2px 2px 2px rgba(68,150,246,0.3);
+    }
+    &__item:last-child::before {
+      content: url("../assets/icons/calculator-icon.svg");
+      position: absolute;
+      left: 10px;
+    }
+  }
+}
+
+@media (max-width: 1105px) {
+  .header {
+    &__button {
+      position: fixed;
+      top: -120%;
+      transition: all 0.3s ease 0s;
+      &.active {
+        z-index: 3;
+        top: 120px;
+        width: 210px;
+        font-size: 14px;
+        &::before {
+          content: url("../assets/logo.svg");
+          position: absolute;
+          left: 0;
+          top: -70px;
+        }
+      }
+    }
+    &__menu {
+      position: fixed;
+      top: -120%;
+      left: 0;
+      width: 320px;
+      height: 100%;
+      overflow: auto;
+      transition: all 0.3s ease 0s;
+      padding-top: 170px;
+      background-color: $white;
+      &.active {
+        top: 0;
+      }
+    }
+    .header-menu {
+      display: block;
+      &__item {
+        margin: 0 20px;
+        padding: 25px 0px;
+        border-bottom: 1px solid rgba(52, 125, 184, 0.15);
+        border-right: none;
+        &:last-child {
+          padding-left: 30px;
+        }
+        &:last-child::before {
+          left: 0;
+        }
+      }
+    }
+    .burger-btn {
+      display: block;
+      cursor: pointer;
+      &__icon {
+        position: absolute;
+        top: 20px;
+        left: 11px;
+        width: 17px;
+        height: 2px;
+        background-color: $bright-blue;
+        transition: all 0.3s ease 0s;
+      }
+      &__wrapper {
+        position: relative;
+        z-index: 3;
+        width: 40px;
+        height: 40px;
+        border-radius: 3px;
+        background-color: $light-grey;
+        &::before, &::after {
+          position: absolute;
+          left: 11px;
+          width: 17px;
+          height: 2px;
+          content: '';
+          background-color: $bright-blue;
+          transition: all 0.3s ease 0s;
+        }
+        &::before {
+          top: 14px;
+        }
+        &::after {
+          bottom: 12px;
+        }
+        &.active::before {
+          top: 19px;
+          transform: rotate(45deg);
+          background: $red;
+        }
+        &.active::after {
+          bottom: 19px;
+          transform: rotate(-45deg);
+          background: $red;
+        }
+        &.active .burger-btn__icon {
+          transform: scale(0);
+        }
+      }
+    }
+  
+  }
+}
+
+@media (max-width: 745px) {
+  .header {
+    &__logo {
+      width: 116px;
+    }
+    .search {
+      width: 100%;
+      padding: 0 10px;
+      justify-content: flex-end;
+      border: none;
+      &__btn, &__input {
+        border: none;
+      }
+      &__btn {
+        padding: 10px 0 9px 12px; 
+      }
+      &__input {
+        width: 0%;
+        padding: 7px;
+        transition: all 0.3s ease 0s;
+        font-size: 8px;
+        &.active {
+          width: 50%;
+        }
+      }
+      &__input-btn {
+        position: absolute;
+        justify-content: flex-end;
+        width: 1%;
+        padding: 20px 8px;
+        border-radius: 0 8px 8px 0;
+        background: $light-grey;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        &.active {
+          display: flex;
+          z-index: 4;
+          content: "";
+          right: 10px;
+          width: 15%;
+          &::before {
+            transform: rotate(45deg);
+          }
+          &::after {
+            transform: rotate(-45deg);
+            bottom: 18px;
+          }
+        }
+        &::before, &::after {
+          content: ' ';
+          right: 20px;
+          background-color: red;
+          position: absolute;
+          width: 15px;
+          height: 2px;
+          transition: all 0.3s ease 0s;
+        }
+      }
+    }
+  }
+}

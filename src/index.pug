@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Калькулятор
+  body
+
+    include ./blocks/header-item.pug
+    
+    header.header
+      .header__wrapper
+        .header__row
+          img(class="header__logo" src="./assets/logo.svg", alt="logo")
+          .header__search.search
+            button.search__btn
+              img(class="search__btn-img" src="./assets/icons/search-icon.svg", alt="search-icon")
+            input(class="search__input" type="text" placeholder="Введите название компании...")
+            .search__input-btn
+          button.header__button Добавить компанию +
+          .header__burger.burger-btn
+            .burger-btn__wrapper
+              span.burger-btn__icon
+      .header__menu
+        ul.header-menu
+          +header-item("#", "Ремонт квартир")
+          +header-item("#", "Дизайн интерьеров")
+          +header-item("#", "Карта компаний")
+          +header-item("#", "Последние отзывы")
+          +header-item("#", "Калькулятор ремонта")
+
+    .main
+      .main__wrapper
