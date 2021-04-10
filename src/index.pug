@@ -84,7 +84,14 @@ html(lang="en")
                   "300")
 
                 label(for="calculator__perimeter") Общий периметр стен:*
-                  input(class="calculator__perimeter" type="number" name="perimeter")
+                  input(
+                    class="calculator__perimeter" 
+                    type="number" 
+                    name="perimeter" 
+                    min=1
+                    max=999
+                    onkeypress="return false")
+                  p.calculator__argument м
 
                 +square-input(
                   "Площадь санузла:*",
@@ -100,8 +107,10 @@ html(lang="en")
                   "Натяжной",
                   "2-уровня гиспокартон")
                 
-                label(for="") Входная дверь*
-                  input(type="checkbox", name="")
+                label(class="calculator__door" for="door-switch") Входная дверь:*
+                  label(class="door-switch")
+                    input(type="checkbox")
+                    span(class="door-switch__slider door-switch__round")
 
             .calculator__foot
               .calculator__total.total
@@ -112,3 +121,4 @@ html(lang="en")
         .main__sidebar.sidebar
           .sidebar__head  Лучшие компании по дизайну интерьеров
           .sidebar__content
+

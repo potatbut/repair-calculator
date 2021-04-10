@@ -5,9 +5,12 @@
 @import "./blocks/calculator.scss";
 @import "./blocks/main.scss";
 
+@import "./assets/input-range.scss";
+@import "./assets/door-switch.scss";
+
 body {
   margin: 0;
-  background-color: #E5E5E5;
+  background-color: $line-grey;
   color: #000;
   font-family: "Gilroy";
   font-weight: 300;

@@ -14,15 +14,65 @@
     row-gap: 24px;
     flex-direction: column;
     width: 47%;
+    &:last-child {
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
     label {
+      position: relative;
       font-size: 12px;
+      color: $label-grey;
     }
     select {
+      border: 1px solid $line-grey;
       border-radius: 5px;
       margin: 4px 0;
       width: 100%;
       padding: 13px 17px;
+      cursor: pointer;
+      color: $label-grey;
+      outline: none;
     }
+  }
+  &__repair-area-range,
+  &__bathroom-area-range {
+    position: absolute;
+    left: 5px;
+    bottom: 2px;
+    width: 96%;
+  }
+  &__output-repair-area,
+  &__output-bathroom-area {
+    border: 1px solid $line-grey;
+    border-radius: 5px;
+    margin: 0;
+    padding: 11px 12px 12px 11px;
+    margin: 4px 0;
+    background: $white;
+    font-size: 18px;
+  }
+  &__argument {
+    position: absolute;
+    top: 12px;
+    left: 45px;
+    font-size: 18px;
+  }
+  &__perimeter {
+    border: 1px solid $line-grey;
+    border-radius: 5px;
+    margin-top: 4px;
+    width: 95%;
+    padding: 8px;
+    outline: none;
+    font-size: 20px;
+    color: $label-grey;
+    font-family: "Gilroy";
+    font-weight: 300;
+  }
+  &__door {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    grid-row: 6;
   }
   &__foot {
     display: flex;

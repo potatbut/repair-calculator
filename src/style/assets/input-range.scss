@@ -1,0 +1,94 @@
+input[type=range] {
+  background-color: transparent;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    background: $bright-blue;
+    border: 0;
+    border-radius: 25px;
+    width: 100%;
+    height: 0.7px;
+    cursor: pointer;
+  }
+
+  &::-webkit-slider-thumb {
+    margin-top: -9.65px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 50px;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background: #61a6f7;
+  }
+
+  &::-moz-range-track {
+    background: #4496f6;
+    border: 0;
+    border-radius: 25px;
+    width: 100%;
+    height: 0.7px;
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+  &::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    border-width: 12.25px 0;
+    color: transparent;
+    width: 100%;
+    height: 0.7px;
+    cursor: pointer;
+  }
+
+  &::-ms-fill-lower {
+    background: #2786f5;
+    border: 0;
+    border-radius: 50px;
+  }
+
+  &::-ms-fill-upper {
+    background: #4496f6;
+    border: 0;
+    border-radius: 50px;
+  }
+
+  &::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 0px;
+
+    /*Needed to keep the Edge thumb centred*/
+  }
+
+  &:focus {
+    &::-ms-fill-lower {
+      background: #4496f6;
+    }
+
+    &::-ms-fill-upper {
+      background: #61a6f7;
+    }
+  }
+}

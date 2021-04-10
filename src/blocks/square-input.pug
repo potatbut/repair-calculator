@@ -1,7 +1,7 @@
 mixin square-input(title, output, range, maximum)
   label(for="calculator__" + output)= title
-    p(class="calculator__" + output)
-      p кв.м
+    p(class="calculator__output-" + output)
+    p.calculator__argument кв.м
     input(
       class="calculator__" + range 
       type="range" 

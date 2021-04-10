@@ -26,7 +26,7 @@ inputButton.addEventListener('click', event => {
   inputButton.classList.toggle('active')
 })
 
-const squareInput = document.querySelector('.calculator__repair-area')
+const squareInput = document.querySelector('.calculator__output-repair-area')
 const squareRange = document.querySelector('.calculator__repair-area-range')
 
 squareInput.innerHTML = squareRange.value
@@ -35,7 +35,7 @@ squareRange.oninput = function() {
   squareInput.innerHTML = squareRange.value
 }
 
-const squareInputBathroom = document.querySelector('.calculator__bathroom-area')
+const squareInputBathroom = document.querySelector('.calculator__output-bathroom-area')
 const squareRangeBathroom = document.querySelector('.calculator__bathroom-area-range')
 
 squareInputBathroom.innerHTML = squareRangeBathroom.value
@@ -43,4 +43,5 @@ squareInputBathroom.innerHTML = squareRangeBathroom.value
 squareRangeBathroom.oninput = function() {
   squareInputBathroom.innerHTML = squareRangeBathroom.value
 }
+
 
