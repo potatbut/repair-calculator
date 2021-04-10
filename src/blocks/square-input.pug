@@ -1,0 +1,10 @@
+mixin square-input(title, output, range, maximum)
+  label(for="calculator__" + output)= title
+    p(class="calculator__" + output)
+      p кв.м
+    input(
+      class="calculator__" + range 
+      type="range" 
+      min="1" 
+      max= maximum 
+      value="42")

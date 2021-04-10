@@ -1,0 +1,5 @@
+mixin dropdown(classname, title, ...picks)
+  label(class="calculator__" +classname, for=title)= title
+    select(name= title)
+      each pick in picks
+        option(value= pick)= pick

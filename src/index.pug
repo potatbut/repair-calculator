@@ -8,6 +8,8 @@ html(lang="en")
   body
 
     include ./blocks/header-item.pug
+    include ./blocks/dropdown.pug
+    include ./blocks/square-input.pug
     
     header.header
       .header__wrapper
@@ -32,3 +34,81 @@ html(lang="en")
 
     .main
       .main__wrapper
+        .main__text.text
+          p.text__paragraph Воспользуйтесь нашим кальулятором, чтобы проссчитать примерную стоимость вашего ремонта. Калькулятор считает среднюю цену на основе прайсов всех предствленных в рейтинге компаний. Не стоит доверять компаниям, которые указывают цену от 1500 за квадратный метр...
+        .main__calculator.calculator
+          .calculator__wrapper
+            p.calculator__head Калькулятор ремонта
+            .calculator__body
+              .calculator__column
+
+                +dropdown(
+                  "premises",
+                  "Тип помещения:*",
+                  "Новостройка",
+                  "Вторичка")
+                +dropdown(
+                  "electrician",
+                  "Электрика:*",
+                  "Нет",
+                  "Частичная замена и подключение",
+                  "Новая от вводного кабеля")
+                +dropdown(
+                  "repairs",
+                  "Тип ремонта:*",
+                  "Дизайнерский",
+                  "Косметический",
+                  "Капитальный")
+                +dropdown(
+                  "bathroom",
+                  "Ремонт санузла:*",
+                  "Нет",
+                  "Да")
+                +dropdown(
+                  "floors",
+                  "Теплые полы:*",
+                  "Нет",
+                  "Да")
+                +dropdown(
+                  "doors",
+                  "Двери:*",
+                  "Нет",
+                  "Да")
+              
+              .calculator__column
+
+                +square-input(
+                  "Площадь ремонта:*",
+                  "repair-area",
+                  "repair-area-range",
+                  "300")
+
+                label(for="calculator__perimeter") Общий периметр стен:*
+                  input(class="calculator__perimeter" type="number" name="perimeter")
+
+                +square-input(
+                  "Площадь санузла:*",
+                  "bathroom-area",
+                  "bathroom-area-range",
+                  "20")
+
+                +dropdown(
+                  "ceilings",
+                  "Потолки:*",
+                  "Нет",
+                  "Гипсокартон",
+                  "Натяжной",
+                  "2-уровня гиспокартон")
+                
+                label(for="") Входная дверь*
+                  input(type="checkbox", name="")
+
+            .calculator__foot
+              .calculator__total.total
+                p.total__heading Стоимость вашего ремонта
+                p.total__text Итого:
+                p.total__sum 140 000 руб.
+              p.calculator__subtext *Напоминаем, что это примерная стоимость
+        .main__sidebar.sidebar
+          .sidebar__head  Лучшие компании по дизайну интерьеров
+          .sidebar__content
