@@ -65,6 +65,7 @@ html(lang="en")
                 input(
                   class="calculator__perimeter"
                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  onkeydown="javascript: return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))"
                   type="number" 
                   name="perimeter" 
                   min=1
