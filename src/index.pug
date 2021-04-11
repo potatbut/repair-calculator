@@ -63,12 +63,13 @@ html(lang="en")
 
               label(for="calculator__perimeter") Общий периметр стен:*
                 input(
-                  class="calculator__perimeter" 
+                  class="calculator__perimeter"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                   type="number" 
                   name="perimeter" 
                   min=1
                   max=999
-                  onkeypress="return false"
+                  maxlength="3"
                   value=50)
                 p.calculator__argument м
 
