@@ -46,6 +46,10 @@
   }
   &__bathroom-area {
     width: 70%;
+    left: -9999%;
+  }
+  &__bathroom-area.show {
+    left: 0;
   }
   &__repair-area-range,
   &__bathroom-area-range {
@@ -86,12 +90,14 @@
     grid-column: 1;
   }
   &__door {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    justify-content: start;
+    grid-template-columns: 35% 1fr;
     flex-direction: column;
     grid-column: 2;
     grid-row: 6;
   }
+  
   label+&__door{
     @media (max-width: 1120px) {
       grid-column: 2;

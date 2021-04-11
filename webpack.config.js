@@ -7,14 +7,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
-// const filename = (ext) => isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: './index.js',
   output: {
-    filename: /* `${filename('js')}` */'output.js',
+    filename: 'output.js',
     path: path.resolve(__dirname, 'dist')
   },
   devtool: isProd ? false : 'source-map',

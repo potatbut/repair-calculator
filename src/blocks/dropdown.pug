@@ -1,5 +1,5 @@
 mixin dropdown(classname, title, ...picks)
   label(class="calculator__" +classname, for=title)= title
-    select(name= title)
+    select(name= title, class="calculator__select-" +classname)
       each pick in picks
         option(value= pick)= pick

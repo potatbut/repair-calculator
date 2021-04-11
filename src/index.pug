@@ -57,9 +57,9 @@ html(lang="en")
               +dropdown(
                 "electrician",
                 "Электрика:*",
-                "Нет",
                 "Частичная замена и подключение",
-                "Новая от вводного кабеля")
+                "Новая от вводного кабеля",
+                "Нет")
 
               label(for="calculator__perimeter") Общий периметр стен:*
                 input(
@@ -82,10 +82,10 @@ html(lang="en")
               +dropdown(
                 "ceilings",
                 "Потолки:*",
-                "Нет",
                 "Гипсокартон",
                 "Натяжной",
-                "2-уровня гиспокартон")
+                "2-уровня гиспокартон",
+                "Нет")
 
               
               +dropdown(
@@ -110,18 +110,25 @@ html(lang="en")
                 "doors",
                 "Двери:*",
                 "Нет",
-                "Да")
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7")
                 
               label(class="calculator__door" for="door-switch") Входная дверь:*
                 label(class="door-switch")
-                  input(type="checkbox")
+                  input(class="door-switch__checkbox" type="checkbox" )
                   span(class="door-switch__slider door-switch__round")
+                span.door-switch__output
 
             .calculator__foot
               .calculator__total.total
                 span.total__heading Стоимость вашего ремонта
                 span.total__text Итого:
-                span.total__sum 140 000 руб.
+                span.total__sum 
               p.calculator__subtext *Напоминаем, что это примерная стоимость
         .main__sidebar.sidebar
           .sidebar__wrapper
