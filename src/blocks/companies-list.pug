@@ -1,0 +1,8 @@
+mixin companies-list(options)
+  each option, index in options
+    a(href="#").sidebar__line.line
+      img(class="line__img" src=option.link alt="company-logo")
+      p.line__title #{option.title}
+      button.line__btn
+        span.line__btn-sum #{option.sum}
+        span.line__btn-text баллов

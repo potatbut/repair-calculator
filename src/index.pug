@@ -10,6 +10,7 @@ html(lang="en")
     include ./blocks/header-item.pug
     include ./blocks/dropdown.pug
     include ./blocks/square-input.pug
+    include ./blocks/companies-list.pug
     
     header.header
       .header__wrapper
@@ -40,85 +41,101 @@ html(lang="en")
           .calculator__wrapper
             p.calculator__head Калькулятор ремонта
             .calculator__body
-              .calculator__column
 
-                +dropdown(
-                  "premises",
-                  "Тип помещения:*",
-                  "Новостройка",
-                  "Вторичка")
-                +dropdown(
-                  "electrician",
-                  "Электрика:*",
-                  "Нет",
-                  "Частичная замена и подключение",
-                  "Новая от вводного кабеля")
-                +dropdown(
-                  "repairs",
-                  "Тип ремонта:*",
-                  "Дизайнерский",
-                  "Косметический",
-                  "Капитальный")
-                +dropdown(
-                  "bathroom",
-                  "Ремонт санузла:*",
-                  "Нет",
-                  "Да")
-                +dropdown(
-                  "floors",
-                  "Теплые полы:*",
-                  "Нет",
-                  "Да")
-                +dropdown(
-                  "doors",
-                  "Двери:*",
-                  "Нет",
-                  "Да")
-              
-              .calculator__column
-
-                +square-input(
-                  "Площадь ремонта:*",
-                  "repair-area",
-                  "repair-area-range",
-                  "300")
-
-                label(for="calculator__perimeter") Общий периметр стен:*
-                  input(
-                    class="calculator__perimeter" 
-                    type="number" 
-                    name="perimeter" 
-                    min=1
-                    max=999
-                    onkeypress="return false")
-                  p.calculator__argument м
-
-                +square-input(
-                  "Площадь санузла:*",
-                  "bathroom-area",
-                  "bathroom-area-range",
-                  "20")
-
-                +dropdown(
-                  "ceilings",
-                  "Потолки:*",
-                  "Нет",
-                  "Гипсокартон",
-                  "Натяжной",
-                  "2-уровня гиспокартон")
+              +dropdown(
+                "premises",
+                "Тип помещения:*",
+                "Новостройка",
+                "Вторичка")
                 
-                label(class="calculator__door" for="door-switch") Входная дверь:*
-                  label(class="door-switch")
-                    input(type="checkbox")
-                    span(class="door-switch__slider door-switch__round")
+              +square-input(
+                "Площадь ремонта:*",
+                "repair-area",
+                "repair-area-range",
+                "300")
+
+              +dropdown(
+                "electrician",
+                "Электрика:*",
+                "Нет",
+                "Частичная замена и подключение",
+                "Новая от вводного кабеля")
+
+              label(for="calculator__perimeter") Общий периметр стен:*
+                input(
+                  class="calculator__perimeter" 
+                  type="number" 
+                  name="perimeter" 
+                  min=1
+                  max=999
+                  onkeypress="return false"
+                  value=50)
+                p.calculator__argument м
+
+              +dropdown(
+                "repairs",
+                "Тип ремонта:*",
+                "Дизайнерский",
+                "Косметический",
+                "Капитальный")
+
+              +dropdown(
+                "ceilings",
+                "Потолки:*",
+                "Нет",
+                "Гипсокартон",
+                "Натяжной",
+                "2-уровня гиспокартон")
+
+              
+              +dropdown(
+                "bathroom",
+                "Ремонт санузла:*",
+                "Нет",
+                "Да")
+
+              +square-input(
+                "Площадь санузла:*",
+                "bathroom-area",
+                "bathroom-area-range",
+                "20")
+
+              +dropdown(
+                "floors",
+                "Теплые полы:*",
+                "Нет",
+                "Да")
+
+              +dropdown(
+                "doors",
+                "Двери:*",
+                "Нет",
+                "Да")
+                
+              label(class="calculator__door" for="door-switch") Входная дверь:*
+                label(class="door-switch")
+                  input(type="checkbox")
+                  span(class="door-switch__slider door-switch__round")
 
             .calculator__foot
               .calculator__total.total
-                p.total__heading Стоимость вашего ремонта
-                p.total__text Итого:
-                p.total__sum 140 000 руб.
+                span.total__heading Стоимость вашего ремонта
+                span.total__text Итого:
+                span.total__sum 140 000 руб.
               p.calculator__subtext *Напоминаем, что это примерная стоимость
         .main__sidebar.sidebar
-          .sidebar__head  Лучшие компании по дизайну интерьеров
-          .sidebar__content
-
+          .sidebar__wrapper
+            p.sidebar__head  Лучшие компании по дизайну интерьеров
+            .sidebar__content
+              +companies-list([
+                {link: "./assets/logo-service.svg", title: "Строй Комплект Сервис", sum: "2700"},
+                {link: "./assets/logo-service.svg", title: "Строй Комплект Сервис", sum: "2700"},
+                {link: "./assets/logo-service.svg", title: "Строй Комплект Сервис", sum: "2700"},
+                {link: "./assets/logo-service.svg", title: "Строй Комплект Сервис", sum: "2700"},
+                {link: "./assets/logo-service.svg", title: "Строй Комплект Сервис", sum: "2700"},
+                {link: "./assets/logo-service.svg", title: "Строй Комплект Сервис", sum: "2700"},
+                {link: "./assets/logo-service.svg", title: "Строй Комплект Сервис", sum: "2700"},
+                {link: "./assets/logo-service.svg", title: "Строй Комплект Сервис", sum: "2700"},
+                {link: "./assets/logo-service.svg", title: "Строй Комплект Сервис", sum: "2700"},
+                {link: "./assets/logo-service.svg", title: "Строй Комплект Сервис", sum: "2700"}
+              ])

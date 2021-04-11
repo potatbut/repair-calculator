@@ -1,0 +1,55 @@
+.sidebar {
+  &__wrapper{
+    border-radius: 10px;
+    background: $white;
+  }
+  &__head {
+    padding: 10px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    @media (max-width: 1120px) {
+      font-size: 14px;
+    }
+  }
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    padding: 11px;
+    align-items: center;
+    @media (max-width: 1120px) {
+      padding: 2px;
+    }
+  }
+  .line {
+    &__title {
+      overflow: hidden;
+      max-width: 50%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &__btn {
+      padding: 12px;
+      background: $light-grey;
+      @media (max-width: 1120px) {
+        padding: 0;
+        max-height: 24px;
+      }
+      &-sum {
+        margin-right: 4px;
+        font-weight: 800;
+        color: $bright-blue;
+        
+      }
+      &-text {
+        @media(max-width: 1120px) {
+          display: none;
+        }
+      }
+    }
+    &:hover {
+      background: $light-grey;
+    }
+  }
+}

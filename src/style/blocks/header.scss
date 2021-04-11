@@ -96,6 +96,7 @@
       transition: all 0.3s ease 0s;
       padding-top: 170px;
       background-color: $white;
+      z-index: 1;
       &.active {
         top: 0;
       }
