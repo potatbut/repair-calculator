@@ -20,5 +20,4 @@ Used:
 - javascript
 
 
-Preview:
 <a href="https://ibb.co/XbbRFCQ"><img src="https://i.ibb.co/XbbRFCQ/2021-04-12-083124.png" alt="2021-04-12-083124" border="0"></a>
